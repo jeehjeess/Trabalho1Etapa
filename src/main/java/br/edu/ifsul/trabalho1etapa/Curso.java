@@ -42,8 +42,7 @@ public class Curso implements Serializable{
     private String sigla; 
     
     @NotBlank(message = "A descrição deve ser informada")
-    @Length(max = 50, message = "A descrição não pode ter mais que {max} caracteres")
-    @Column(name = "descricao", length = 50, nullable = false) 
+    @Column(name = "descricao", columnDefinition = "text", nullable = false)
     private String descricao; 
     
     @NotNull(message = "O Status deve ser informado")
@@ -51,8 +50,8 @@ public class Curso implements Serializable{
     private Boolean ativo; 
     
     @Temporal(TemporalType.DATE)
-    @NotNull(message = "O nascimento deve ser informado")
-    @Column(name = "nascimento", nullable = false)
+    @NotNull(message = "O início das atividades deve ser informado")
+    @Column(name = "inicioAtividade", nullable = false)
     private Calendar inicioAtividades; 
     
     @NotNull(message = " A instituição deve ser informada!")
